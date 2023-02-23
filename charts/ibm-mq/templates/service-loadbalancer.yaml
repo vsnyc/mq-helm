@@ -18,6 +18,8 @@ metadata:
   name: {{ include "ibm-mq.fullname" . }}-loadbalancer
   labels:
     {{- include "ibm-mq.labels" . | nindent 4 }}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
 spec:
   type: LoadBalancer
   ports:
